@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        //.startsWith()
+        const str = "To be, or not to be, that is the question.";
+
+        console.log(str.startsWith("To be")); // true
+        console.log(str.startsWith("not to be")); // false
+        console.log(str.startsWith("not to be", 10)); // true
+
+
+
+        // .endsWith()
+        const str2 = "To be, or not to be, that is the question.";
+
+        console.log(str2.endsWith("question.")); // true
+        console.log(str2.endsWith("to be")); // false
+        console.log(str2.endsWith("to be", 19)); // true
+
+
+
+
+        //.includes()
+        const str3 = "To be, or not to be, that is the question.";
+
+        console.log(str3.includes("to be")); // true
+        console.log(str3.includes("question")); // true
+        console.log(str3.includes("nonexistent")); // false
+        console.log(str3.includes("To be", 1)); // false
+
+
+
+
+
+        // Object destructuring
+        let person = {
+            name: "Ironhacker",
+            age: 25,
+            favoriteMusic: "Metal",
+            address: {
+                street: 'García Luna',
+                number: 33,
+                code: 28003
+            }
+        }
+
+        const { name, age, favoriteMusic, address } = person
+
+        console.log(`Hello, ${name}.`);
+        console.log(`You are ${age} years old.`);
+        console.log(`Your favorite music is ${favoriteMusic}.`);
+        console.log(`Lives in street ${address.street}.`);
+
+        const { number, code } = person.address
+
+        console.log(`Vive en el número ${number} del CP ${code}`)
+
+
+
+
+        // Array destructuring
+        const drinks = ['agua', 'fanta', 'kas']
+        const [first, , third] = drinks
+
+        console.log(`Las bebidas son ${first} y ${third}`)
+
+
+
+
+
+        // Spread operator for array merging
+        const reptiles = ["snake", "lizard", "alligator"];
+        const mammals = ["puppy", "kitten", "bunny"];
+
+        const animals = [...reptiles, 'popino', ...mammals, 'disfrutón']
+
+        console.log(animals)
+
+
+
+
+
+        // REST parameters
+        const getSum = (...prices) => {
+            return prices.reduce((acc, elm) => acc + elm)
+        }
+
+        const housePricesSum = getSum(2390, 7364, 84745, 8374)
+
+        console.log(`El sumatorio es ${housePricesSum}, y el precio medio de Beberly Hills es ${housePricesSum / 4}`)
+
+
+    </script>
+</body>
+
+</html>
